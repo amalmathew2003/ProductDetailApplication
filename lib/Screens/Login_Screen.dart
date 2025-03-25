@@ -40,37 +40,39 @@ class _LoginScreenState extends State<LoginScreen> {
         centerTitle: true,
         title: Text("LOGIN"),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 300,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: name,
-              decoration: InputDecoration(
-                  label: Text("Name"),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20))),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: password,
-              decoration: InputDecoration(
-                  label: Text("Password"),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20))),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: name,
+                decoration: InputDecoration(
+                    label: Text("Name"),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20))),
+              ),
             ),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Login();
-              },
-              child: Text("LOGIN"))
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: password,
+                decoration: InputDecoration(
+                    label: Text("Password"),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20))),
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Login();
+                },
+                child: Text("LOGIN"))
+          ],
+        ),
       ),
     );
   }
